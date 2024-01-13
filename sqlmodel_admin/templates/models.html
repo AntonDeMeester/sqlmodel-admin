@@ -1,0 +1,10 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+<div class="block">
+    <h1 class="h1">Registered models</h1>
+    {% for model in model_names %}
+        <div>{{ model }}</div>
+    {% endfor%}
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}SQLModel Admin{% endblock %}</title>
+  <link rel="stylesheet" href="{{ '/admin/static/css/bulma.min.css' }}" />
+  <script src="/admin/static/js/htmx.min.js" defer></script>
+</head>
+
+<body>
+    <link href="/admin/static/css/base.css" rel="stylesheet">
+    
+    <div class="wrapper">
+      <nav class="sidebar">
+          {% block menu %} {% endblock %}
+      </nav>
+      <main class="centerpiece">{% block content %}{% endblock %}</main>
+    </div>
+</body>
+
+</html>

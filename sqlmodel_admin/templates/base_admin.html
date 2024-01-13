@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block menu %}
+<aside class="menu">
+    <p class="menu-label">
+        General
+    </p>
+    <ul class="menu-list">
+        {% if model_names %}
+            {% for model in model_names %}
+                <li><a href="{{url_for('admin:admin_' + name + '_list')}}">{{model}}</a></li>
+            {%endfor %}
+        {%else %}
+            <div>No models added yet</div>
+        {%endif%}
+    </ul>
+</aside>
+{% endblock %}

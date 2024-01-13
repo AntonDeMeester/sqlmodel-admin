@@ -1,0 +1,27 @@
+/* Define the wrapper as a flex container */
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  }
+  
+/* Define the sidebar as a flex item */
+.sidebar {
+  flex: 0 0 200px; /* Set the width of the sidebar */
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+/* Define the topbar as a flex item */
+.topbar {
+  flex: 0 0 auto; /* Let the topbar height adjust to its content */
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+/* Define the centerpiece as a flex item */
+.centerpiece {
+  flex: 1 1 auto; /* Let the centerpiece height adjust to fill the remaining space */
+  background-color: #ffffff;
+  padding: 20px;
+}

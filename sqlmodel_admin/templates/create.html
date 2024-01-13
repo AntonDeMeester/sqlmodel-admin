@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="block">
+    <h1 class="title is-1">Create new {{ name }}</h1>
+    <form hx-post="{{ url_for('admin/admin_' + name + '_create_new') }}">
+        {% for name, field in fields.items() %}
+            <div class="field">
+                <label for="#{{name}}" class="label">{{name}}</label>
+                <div class="control">
+                    <input
+                    id="{{name}}"
+                    type="{{field.type}}"
+                    class="input"
+                >
+                </div>
+                <p class="help">This is a help text</p>
+            </div>
+        {% endfor %}
+    </form>
+    <button class="button" type=submit hx-post="{{ url_for('admin_' + name + '_create_display') }}">Create new</button>
+</div>
+{% endblock %}

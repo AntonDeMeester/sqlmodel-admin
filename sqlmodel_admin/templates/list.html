@@ -1,0 +1,30 @@
+{% extends "base/base_admin.html" %}
+
+{% block content %}
+<div class="block">
+    <h1 class="h1">{{ name }}</h1>
+    <a class="button" href="{{ url_for('admin:admin_' + name + '_create_display') }}">Add new</a>
+    <table class="table">
+        <thead>
+            {% for col in fields %}
+            <th>{{ col }}</th>
+            {% endfor %}
+        </thead>
+        <tbody>
+            {% if data %}
+            {% for item in data %}
+            <tr>
+                {% for col in fields %}
+                <td>{{ item[col] }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td>No data yet</td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
